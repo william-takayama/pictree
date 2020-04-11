@@ -1,7 +1,7 @@
 <header class="fixed-top">
-    <nav class="navbar navbar-light bg-white">
-        <a class="navbar-brand">ALURAPIC</a>
-        <div *ngIf="(user$ | async) as user; else login">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <a [routerLink]="['']" class="navbar-brand">ALURAPIC</a>
+        <div *ngIf="(user$ | async) as user; else login" class="navbar-text mt-3">
             <i class="fa fa-user-circle mr-1"></i>
             <a class="ml-1">{{ user.name }}</a>
             <a [routerLink]="['']" (click)="logout()"> (Logout)</a>
