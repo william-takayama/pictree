@@ -9,11 +9,9 @@ import { CoreModule } from './core/core.module';
 
 
 @NgModule({
-  // Declarations = Just COMPONENTS
   declarations: [
     AppComponent
   ],
-  // IMPORTS = Just MODULES
   imports: [
     BrowserModule,
     PhotosModule,

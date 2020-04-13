@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
 
-const KEY = 'authToken'
-@Injectable({ providedIn: 'root' })
-export class TokenService { 
+const KEY = 'authToken';
 
-    hasToken(){
-        return !!this.getToken(); // Tip to convert string to boolean
+@Injectable({ providedIn: 'root'})
+export class TokenService {
+
+    hasToken() {
+        return !!this.getToken();
     }
-    setToken(token){
+
+    setToken(token) {
         window.localStorage.setItem(KEY, token);
     }
-    getToken(){
+
+    getToken() {
         return window.localStorage.getItem(KEY);
     }
-    removeToken(){
+
+    removeToken() {
         window.localStorage.removeItem(KEY);
     }
 }

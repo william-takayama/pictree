@@ -5,6 +5,8 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
+import { AuthGuard } from './core/auth/auth.guard';
+import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
 
 const routes: Routes = [
     {
@@ -12,32 +14,53 @@ const routes: Routes = [
         pathMatch: 'full',
         redirectTo: 'home'
     },
-    {
+    { 
         path: 'home',
         loadChildren: './home/home.module#HomeModule'
-    },
-    {
-        path: 'user/:userName',
+    },              
+    { 
+        path: 'user/:userName', 
         component: PhotoListComponent,
-        resolve: { photos: PhotoListResolver } // photos 
+        resolve: {
+            photos: PhotoListResolver
+        },
+        data: {
+            title: 'Timeline'
+        }
     },
     { 
-        path: 'p/add',
-        component: PhotoFormComponent 
+        path: 'p/add', 
+        component: PhotoFormComponent,
+        canActivate: [AuthGuard],
+        data: {
+            title: 'Photo upload'
+        }
     },
+    { 
+        path: 'p/:photoId', 
+        component: PhotoDetailsComponent,
+        data: {
+            title: 'Photo detail'
+        }
+    },
+    { 
+        path: 'not-found', 
+        component: NotFoundComponent,
+        data: {
+            title: 'Not found'
+        } 
+    },  
     { 
         path: '**', 
-        component: NotFoundComponent 
-    }
+        redirectTo: 'not-found' 
+    }  
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(routes, { useHash: true }) // useHash for more browser compability
+    imports: [ 
+        RouterModule.forRoot(routes, { useHash: true } ) // useHash for browser compability
     ],
-    exports: [RouterModule]
+    exports: [ RouterModule ]
 })
+export class AppRoutingModule { }
 
-export class AppRoutingModule {
-
-}
