@@ -9,7 +9,10 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    chromeOption: {
+      binary: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
@@ -24,5 +27,8 @@ exports.config = {
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    by.addLocator('formControlName', (value) => {
+      return document.querySelectorAll(`[formControlName="${value}"]`);
+    });
   }
 };
