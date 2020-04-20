@@ -56,7 +56,7 @@ describe('Signup Form', () => {
         expect(navigateSpy).toHaveBeenCalledWith([""]);
     });
 
-    it("Should log if there's any error", () => {
+    it("Should log a message if there's any error", () => {
         const spyLog = spyOn(console, "log");
         spyOn(signupService, "signup").and.returnValue(throwError("Server error"));
 

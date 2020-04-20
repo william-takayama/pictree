@@ -76,5 +76,4 @@ export class PhotoService {
                 return err.status == '304' ? of(false) : throwError(err);
             }));
     }
-
 }

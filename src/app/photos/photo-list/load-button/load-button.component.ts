@@ -13,5 +13,4 @@ export class LoadButtonComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

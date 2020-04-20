@@ -24,7 +24,6 @@ export class AuthService {
         { userName, password }, 
         { observe: 'response'} 
       )
-      // .post(API + '/user/login', {userName: userName, password: password})
       .pipe(tap(res => {
         const authToken = res.headers.get('x-access-token');
         this.userService.setToken(authToken);

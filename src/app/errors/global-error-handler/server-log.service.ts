@@ -15,5 +15,4 @@ export class ServerLogService {
 
         return this.http.post(API + 'infra/log', serverLog);
     }
-
 }

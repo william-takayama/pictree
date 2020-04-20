@@ -1,11 +1,16 @@
 import { TokenService } from './token.service';
 
 describe('Token Service', () => {
-    let token;
-    let service;
+    let token: string;
+    let service: TokenService;
 
+    beforeEach(() => {
+        token = 'tokentest';
+        service = new TokenService();
+    }); 
+
+    // Smoke test - test if the class or service can be instantiated
     it('Should be created', () => {
-        // Smoke test - test if the class or service can be instantiated
         expect(service).toBeTruthy();
     });
 
@@ -25,9 +30,4 @@ describe('Token Service', () => {
     afterEach(() => {
         localStorage.clear();
     });
-
-    beforeEach(() => {
-        token = 'tokentest';
-        service = new TokenService();
-    }); 
 });
