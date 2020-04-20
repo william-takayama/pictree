@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
-import { Title } from '@angular/platform-browser';
 
 @Component({
     templateUrl: 'signin.component.html'
@@ -13,7 +12,8 @@ export class SignInComponent implements OnInit {
 
     fromUrl: string;
     loginForm: FormGroup;
-    @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
+    @ViewChild('userNameInput', { static: true }) userNameInput: ElementRef<
+    HTMLInputElement>;
 
     constructor(
         private formBuider: FormBuilder,

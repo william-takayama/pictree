@@ -19,7 +19,7 @@ import { userNamePassword } from './username-password.validator';
 export class SignUpComponent implements OnInit { 
 
     signupForm: FormGroup;
-    @ViewChild('emailInput') emailInput: ElementRef<HTMLInputElement>;
+    @ViewChild('emailInput', { static: true }) emailInput: ElementRef<HTMLInputElement>;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -71,16 +71,28 @@ export class SignUpComponent implements OnInit {
             this.emailInput.nativeElement.focus();
     }
 
-    signup() {
-        if(this.signupForm.valid && !this.signupForm.pending) {
-            const newUser = this.signupForm.getRawValue() as NewUser; // Return a js object (email, fullname, username, password)
-            console.log(newUser);
-            this.signupService
-                .singup(newUser)
-                .subscribe(
-                    () => this.router.navigate(['']),
-                    err => console.log(err)
-                );
+    // signup() {
+    //     if(this.signupForm.valid && !this.signupForm.pending) {
+    //         const newUser = this.signupForm.getRawValue() as NewUser; // Return a js object (email, fullname, username, password)
+    //         console.log(newUser);
+    //         this.signupService
+    //             .signup(newUser)
+    //             .subscribe(
+    //                 () => this.router.navigate(['']),
+    //                 err => console.log(err)
+    //             );
+    //     }
+    // }
+
+    signUp() {
+        if (!this.signupForm.invalid || this.signupForm.pending) {
+          const newUser = this.signupForm.getRawValue() as NewUser;
+          this.signupService.signup(newUser).subscribe(
+            () => this.router.navigate(['']),
+            (err) => {
+              console.log(err);
+            }
+          );
         }
     }
 

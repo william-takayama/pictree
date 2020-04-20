@@ -16,7 +16,7 @@ export class SignupService {
         return this.http.get(API + '/user/exists/' + userName);
     }
 
-    singup(newUser: NewUser) {
+    signup(newUser: NewUser) {
         return this.http.post(API + '/user/signup', newUser);
     }
 }
