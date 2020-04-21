@@ -1,6 +1,6 @@
 .loading {
     margin: 0;
-    background: linear-gradient(270deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+    background: linear-gradient(270deg, #1c1c77, #1818b3, #396f9c, #6fbdd4, #e8f9fd);
     animation: progress 2s ease;
     height: 0.2em;
 }
