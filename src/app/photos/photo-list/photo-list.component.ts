@@ -6,8 +6,7 @@ import { LoadingService } from 'src/app/shared/components/loading/loading.servic
 
 @Component({
   selector: 'ap-photo-list',
-  templateUrl: './photo-list.component.html',
-  styleUrls: ['./photo-list.component.css']
+  templateUrl: './photo-list.component.html'
 })
 export class PhotoListComponent implements OnInit {
 

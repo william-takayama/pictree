@@ -62,6 +62,11 @@ export class PhotoService {
         );
     }
 
+    removeComment(photoId: number, commentId: number) {
+        return this.http.delete
+            (API + '/photos/' + photoId + '/comments/' + commentId);
+    }
+
     removePhoto(photoId: number) {
         return this.http.delete
             (API + '/photos/' + photoId);

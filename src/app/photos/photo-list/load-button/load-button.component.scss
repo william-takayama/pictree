@@ -1,0 +1,25 @@
+@import '../../../shared/helpers/variables.scss';
+
+.loading-button {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid $default-grey;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 700;
+    background-color: $default-white;
+    color: $default-color;
+    text-align: center;
+    transition: 0.3s cubic-bezier(1, 0, 0, 1);
+    max-width: 100%;
+    border-radius: 0.3em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.loading-button:hover {
+    padding: 0.35em 1.4em;
+    letter-spacing: 0.15em;
+    background-color: $default-color;
+    color: $default-white;
+}

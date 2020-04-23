@@ -20,10 +20,12 @@
                 </li>
             </ul>
         </ap-menu>
-        <div *ngIf="(user$ | async) as user; else login" class="navbar-text mt-3">
+        <div *ngIf="(user$ | async) as user; else login" class="navbar-text mt-1">
             <i class="fa fa-user-circle mr-1"></i>
             <a class="ml-1">{{ user.name }}</a>
-            <a [routerLink]="['']" (click)="logout()"> (Logout)</a>
+            <div class="container">
+                <a [routerLink]="['']" (click)="logout()" class="small"> (Logout)</a>
+            </div>
         </div>
         <ng-template #login>
             <span class="navbar-text">

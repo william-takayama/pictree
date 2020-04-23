@@ -1,0 +1,17 @@
+@import '../../../shared/helpers/variables.scss';
+
+.comment-list { 
+    height: 50vh;
+    overflow-y: auto;
+    width: 100%;
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $scroll-bar;
+        outline: 1px solid $scroll-bar;
+        border-radius: 0.6em;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0.6em;
+    }
+}

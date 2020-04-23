@@ -1,11 +1,11 @@
 <h4 class="text-center">Login</h4>
 
-<form [formGroup]="loginForm" class="form mt-4 ml-4 mr-4" (submit)="login()">
+<form [formGroup]="loginForm" class="form m-4 p-4" (submit)="login()">
 
     <div class="form-group">
         <input #userNameInput
             formControlName="userName"
-            class="form-control" 
+            class="form-control mb-3" 
             placeholder="user name" 
             autofocus>  
         <ap-vmessage 
@@ -19,7 +19,7 @@
         <input
             formControlName="password"
             type="password" 
-            class="form-control" 
+            class="form-control mb-3" 
             placeholder="password">   
         <ap-vmessage 
             *ngIf="loginForm.get('password').errors?.required" 
@@ -31,7 +31,7 @@
     <button 
         [disabled]="loginForm.invalid"
         type="submit" 
-        class="btn btn-primary btn-block">
+        class="btn btn-primary btn-block mb-3">
         login
     </button>
     
