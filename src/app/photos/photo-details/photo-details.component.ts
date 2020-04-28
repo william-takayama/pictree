@@ -14,7 +14,7 @@ export class PhotoDetailsComponent implements OnInit {
 
     photo$: Observable<Photo>;
     photoId: number;
-    public commentsCount: number; 
+    public commentsCount: number = 0; 
 
     constructor(
         private route: ActivatedRoute,
@@ -69,5 +69,13 @@ export class PhotoDetailsComponent implements OnInit {
                     this.router.navigate(['']);
                 }
             );
+    }
+
+    updateCommentsCount() {
+        this.commentsCount ++;
+    }
+
+    decreaseComment() {
+        this.commentsCount = this.commentsCount -1;
     }
 }

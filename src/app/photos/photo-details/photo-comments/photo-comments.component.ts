@@ -1,13 +1,13 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 import { PhotoService } from '../../photo/photo.service';
 import { PhotoComment } from '../../photo/photo-comment';
 import { AlertService } from 'src/app/shared/components/alert/alert.service';
 import { UserService } from 'src/app/core/user/user.service';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'ap-photo-comments',
@@ -17,6 +17,8 @@ import { Router } from '@angular/router';
 export class PhotoCommentsComponent implements OnInit {
     
     @Input() photoId: number; 
+    @Output() increaseComment = new EventEmitter();
+    @Output() descreaseComment = new EventEmitter();
 
     commentId: number;
     commentForm: FormGroup;
@@ -50,8 +52,10 @@ export class PhotoCommentsComponent implements OnInit {
                 .addComment(this.photoId, comment)
                 .pipe(switchMap(() => this.photoService.getComments(this.photoId)))
                 .pipe(tap(() => {
+                    this.increaseComment.emit();
                     this.commentForm.reset();
                     this.alertService.success('Comment has been added!');
+
                 }));
         } else {
             this.alertService.warning('Login before comment', true);
@@ -65,6 +69,7 @@ export class PhotoCommentsComponent implements OnInit {
             .removeComment(this.photoId, id)
             .pipe(switchMap(() => this.photoService.getComments(this.photoId)))
             .pipe(tap(() => {
+                    this.descreaseComment.emit();
                     this.alertService.success('Comment removed', true);                    
                 },
                 err => {

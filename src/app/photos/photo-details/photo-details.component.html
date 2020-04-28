@@ -16,7 +16,7 @@
             <i
               class="fa fa-comment-o fa-2x mr-2 ml-2"
             >
-            </i>{{ photo.comments }}
+            </i>{{ photo.comments + commentsCount }}
             <i 
               photoOwnerOnly [ownedPhoto]="photo" 
               (click)="remove()" 
@@ -29,6 +29,8 @@
         <ap-photo-comments
           *ngIf="photo.allowComments; else warning"
           [photoId]="photoId"
+          (increaseComment)="updateCommentsCount()"
+          (descreaseComment)="decreaseComment()"
         >
         </ap-photo-comments>
         <ng-template #warning>
