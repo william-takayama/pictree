@@ -1,27 +1,44 @@
-# pictree
+# Pictree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+## :triangular_flag_on_post: What is it? 
+  Create responsive SPA similar to INSTAGRAM, using Angular (library), consuming webservices (GET, POST and DELETE). Featured with register, login and logout. And each user has its own profile to post or delete and even like or comment pictures from others users. It was developed using Angular (TypeScript), RXJS, SASS, bootstrap, Font Awesome and for e2e (end-to-end) testing it was used Protractor and Jasmine.
+  
+  #### :computer: Demo on Desktop:
+  <img src="https://media.giphy.com/media/S92wZlArruKNEsYXGR/giphy.gif">
+  
+  #### :iphone: Demo on Mobile:
+  <img src="https://media.giphy.com/media/XfKBFrYrx6NsHxz3IH/giphy.gif">
 
-## Development server
+## :fireworks: Developing Tools: 
+  - Angular v8.3.12
+  - Angular CLI
+  - Typescript and RXJS (frontend)
+  - SASS and Bootstrap
+  - Font Awesome for styling
+  - And for testing Protractor and Jasmine - e2e and unit testing
+  - Editor: VSCode
+  - Web design it was used InkScape, CANVAS and GIMP
+  - NodeJS 
+  - Insonmia
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## :rocket: Goal:
+  Create a responsive single page application using Angular (library), consuming webservices (GET) that were available in a simple backend setup
 
-## Code scaffolding
+## :chart_with_upwards_trend: What I've learned or improved on my knowledge: 
+  - How to use route guards
+  - Validate some input fields
+  - Manage states and create new directives
+  
+## :feet: How to clone or run?
+  - Download the zip or clone using github
+  - Run in your command line ``` npm install ```
+  - Then run ``` npm start ```(Must be done for frontend and backend folders) 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :metal: Contributions
+Pull requests are always welcomed. For major alterations please think about openning an issue first.
+Any improvments advices would be great, don't hesitate on contacting me :smile:
 
-## Build
+## License
+- Project 100% solo - concluded in 3 days. 
+- MIT License - Copyright (c) 2020 william-takayama
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
